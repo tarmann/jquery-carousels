@@ -38,7 +38,6 @@
           currentPage = 1;
   
       // create panes
-
       for(i = 1; i <= pages; i++){
         $slider.append('<div class="pane clearfix"><ul></ul></div>');
         $slider.find('.pane:last ul').html(
@@ -85,7 +84,7 @@
 
       window.gotoPage = gotoPage;
 
-      // 5. Bind to the forward and back buttons
+      // bind to the forward and back buttons
       $('a.back', $carousel).click(function () {
           return gotoPage(currentPage - 1);                
       });
