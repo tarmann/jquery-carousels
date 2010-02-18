@@ -15,7 +15,6 @@
     return $(this).each(function(){
     
       // create outer div and wrapper
-      
       var $itemList = $(this),
           $carousel = $('<div><div class="wrapper"></div></div>')
                         .attr("class", $itemList.attr("class"))
@@ -27,6 +26,7 @@
           $items = $itemList.find('> li'),
           $single = $items.filter(':first'),
           
+          // calculate based on item sizes
           paneWidth = $wrapper.innerWidth(),
 
           cols = params.cols,
