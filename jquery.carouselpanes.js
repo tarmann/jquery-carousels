@@ -6,7 +6,7 @@
  * Licensed under the MIT:
  *   http://www.opensource.org/licenses/mit-license.php
  *
- * Copyright 2009 Bruno Tarmann [ bruno.barretto@arvato-mobile.com.br ]
+ * Copyright 2009 Bruno Tarmann [ contato@tarmann.com.br ]
  *
  */
 
