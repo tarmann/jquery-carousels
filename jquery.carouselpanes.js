@@ -85,11 +85,11 @@
       window.gotoPage = gotoPage;
 
       // bind to the forward and back buttons
-      $('a.back', $carousel).click(function () {
+      $('a.cp-back', $carousel).click(function () {
           return gotoPage(currentPage - 1);                
       });
       
-      $('a.forward', $carousel).click(function () {
+      $('a.cp-forward', $carousel).click(function () {
           return gotoPage(currentPage + 1);
       });
       
