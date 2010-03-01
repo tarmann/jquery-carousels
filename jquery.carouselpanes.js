@@ -16,13 +16,13 @@
     
       // create outer div and wrapper
       var $itemList = $(this),
-          $carousel = $('<div><div class="wrapper"></div></div>')
+          $carousel = $('<div><div class="cp-wrapper"></div></div>')
                         .attr("class", $itemList.attr("class"))
                         .attr("id", $itemList.attr("id"))
                         .insertAfter($itemList);
 
       var $wrapper = $('> div', $carousel),
-          $slider = $("<div>").attr("class","slider").appendTo( $wrapper ),
+          $slider = $("<div>").attr("class","cp-slider").appendTo( $wrapper ),
           $items = $itemList.find('> li'),
           $single = $items.filter(':first'),
           
@@ -39,7 +39,7 @@
   
       // create panes
       for(i = 1; i <= pages; i++){
-        $slider.append('<div class="pane clearfix"><ul></ul></div>');
+        $slider.append('<div class="cp-pane"><ul></ul></div>');
         $slider.find('.pane:last ul').html(
           $items.slice((i * visible) - visible, i * visible).clone()
         );                        
@@ -49,9 +49,9 @@
       $itemList.remove();
 
       // clone first and last item for the loop
-      var $panes = $slider.find('> .pane');
-      $panes.filter(":last").after( $panes.filter(":first").clone().addClass("cloned") );
-      $panes.filter(":first").before( $panes.filter(":last").clone().addClass("cloned") );
+      var $panes = $slider.find('> .cp-pane');
+      $panes.filter(":last").after( $panes.filter(":first").clone().addClass("cp-cloned") );
+      $panes.filter(":first").before( $panes.filter(":last").clone().addClass("cp-cloned") );
 
       // reset position
       $wrapper.scrollLeft(paneWidth);
@@ -80,7 +80,7 @@
       }
       
       // add navigation arrows
-      $wrapper.after('<a class="arrow back"><</a><a class="arrow forward">></a>')
+      $wrapper.after('<div class="cp-arrows"><a class="cp-arrow cp-back"><</a><a class="cp-arrow cp-forward">></a></div>')
 
       window.gotoPage = gotoPage;
 
