@@ -40,7 +40,7 @@
       // create panes
       for(i = 1; i <= pages; i++){
         $slider.append('<div class="cp-pane"><ul></ul></div>');
-        $slider.find('.pane:last ul').html(
+        $slider.find('.cp-pane:last ul').html(
           $items.slice((i * visible) - visible, i * visible).clone()
         );                        
       }
