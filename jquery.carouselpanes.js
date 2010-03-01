@@ -1,6 +1,6 @@
 /*
  * Carousel Panes (for jQuery)
- * version: 1.0 (23/10/2009)
+ * version: 0.1 (23/10/2009)
  * @requires jQuery v1.3.2 or later
  *
  * Licensed under the MIT:
