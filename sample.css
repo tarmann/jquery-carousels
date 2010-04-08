@@ -25,12 +25,35 @@ h1{
   font-size: 72px;
   text-align: center;
   margin-bottom: 21px;
+  
+  text-shadow: #cccccc 4px 4px 4px;
+}
+
+h2{
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  -moz-box-shadow: 4px 4px 4px #ccc;  
+}
+
+h2 a{
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: lowercase;  
+
+  color: #ffffff;
+  font-style: italic;
+  font-size: 20px;
+  
+  padding: 4px 8px;
+  background: #993300;
 }
 
 p{
   font-size: 18px;
   line-height:32px;
-  width: 660px;
+  width: 525px;
   margin: 0 auto;
   padding: 20px;
   background: #f5f5f5;
@@ -39,28 +62,35 @@ p{
 
 /* CAROUSEL PANES */
 
+.carouselpanes,
+.cp-wrapper,
+.cp-pane{
+  width: 425px;
+}
+
 .carouselpanes{
   position: relative;
-  padding: 0 50px;
-  width: 660px;
-  margin: 0px auto;
+  padding: 2px 50px;
+  margin: 60px auto;
 }
 
 .cp-wrapper{
-  width: 660px;
   overflow: hidden; 
 }
 
 .cp-pane{
   float: left;
-  height: 220px;
-  width: 660px;
+  height: 170px;
 }
 
 .cp-pane li{
   float: left;
   margin: 5px;
+  width: 75px;
+  height: 75px;
 }
+
+
 
 .cp-slider{
   width: 9000px;
@@ -78,6 +108,11 @@ p{
   cursor: pointer;
   font-size: 20px;
   -moz-border-radius: 10px;
+  
+  font-family: Arial;
+  font-size: 22px;
+  font-weight: bold;
+  color: #993300;
 }
 
 .cp-back{

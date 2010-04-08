@@ -9,42 +9,47 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".carouselpanes").carouselPanes({
-    rows: 2,
-    cols: 6
-	});
+
+  // load some flickr photos
+  $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=dog&tagmode=any&format=json&jsoncallback=?",
+    function(data){
+      
+      $.each(data.items, function(i,item){
+      
+        image_uri = item.media.m
+        image_uri = image_uri.replace("_m", "_s")
+  
+        image = $("<img/>").attr("src", image_uri);
+        $("<li></li>").html(image).appendTo(".carouselpanes")
+        if ( i == 40 ) return false;
+      });
+      
+      // load carousel panes
+    	$(".carouselpanes").carouselPanes({
+        rows: 2,
+        cols: 5
+    	});      
+    }    
+  );
 });
+
 </script>
 
 </head>
 <body>
 
+<h2><a href="http://www.tarmann.com.br">Tarmann</a></h2>
 <h1>Carousel Panes</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<p>Carrosel infinito com multiplas linhas configuráveis onde a ordem original da lista é mantida. </p>
 
 <ul class="carouselpanes">
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
-	<li><img src="http://dummyimage.com/100x100" /></li>
+  <!-- flickr photos will be loaded here -->
 </ul>
+
+<p>
+  <a href="http://github.com/tarmann/jquery-carouselpanes">Download on Git</a>
+</p>
 
 </body>
 </html>
